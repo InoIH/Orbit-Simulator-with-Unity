@@ -8,6 +8,9 @@ public class SceneTransition : MonoBehaviour
     [SerializeField] private Button oneBodyStartButton;
     [SerializeField] private Button twoBodyStartButton;
     [SerializeField] private Button threeBodyStartButton;
+    [SerializeField] private Button verletOneBody;
+    [SerializeField] private Button verletThreeBody;
+    [SerializeField] private Button verletFourBody;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -15,6 +18,9 @@ public class SceneTransition : MonoBehaviour
         oneBodyStartButton.onClick.AddListener(loadOneBody);
         twoBodyStartButton.onClick.AddListener(loadTwoBody);
         threeBodyStartButton.onClick.AddListener(loadThreeBody);
+        verletOneBody.onClick.AddListener(loadVerletOneBody);
+        verletThreeBody.onClick.AddListener(loadVerletThreeBody);
+        verletFourBody.onClick.AddListener(loadVerletFourBody);
     }
 
     // Update is called once per frame
@@ -36,6 +42,19 @@ public class SceneTransition : MonoBehaviour
     public void loadThreeBody()
     {
         SceneManager.LoadScene("Trinary");
+    }
+
+    public void loadVerletOneBody()
+    {
+        SceneManager.LoadScene("Verlet");
+    }
+    public void loadVerletThreeBody()
+    {
+        SceneManager.LoadScene("3bodyVerlet");
+    }
+    public void loadVerletFourBody()
+    {
+        SceneManager.LoadScene("4bodyVerlet");
     }
 
 }

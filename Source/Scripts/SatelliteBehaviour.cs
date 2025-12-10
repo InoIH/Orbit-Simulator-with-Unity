@@ -12,6 +12,7 @@ public class SatelliteBehaviour : MonoBehaviour
     public double massMultiplier;
     public double planetMass;
     public double mu;
+    public double radius;
     //public because may be referenced by orbit rendering in the future
 
     [SerializeField] private Slider speedSlider;
@@ -51,6 +52,7 @@ public class SatelliteBehaviour : MonoBehaviour
        
             Vector3 direction = referencePlanet.transform.position - rb.position;
             float r = direction.magnitude;
+        radius = r;
             float acceleration = (float)(G * planetMass) / (r * r);
             Vector3 accelerationVector = acceleration * direction.normalized;
             movementManager(ref accelerationVector);
